@@ -4,6 +4,9 @@ import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "Customer")
 @Getter @Setter
@@ -23,4 +26,7 @@ public class Customer
     @Column(name = "LastName")
     @Basic(optional = false)
     private String LastName;
+
+    @OneToMany(mappedBy = "Customer")
+    private List<CustomOrder> CustomOrders = new ArrayList<>();
 }
