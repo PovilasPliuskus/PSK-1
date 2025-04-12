@@ -5,6 +5,17 @@
 <h:head/>
 <h:body>
     <h2>Customers:</h2>
+    <ol>
+        <ui:repeat value="#{customers.allCustomers}" var="customer">
+            <li><h:link value="#{customer.firstName} #{customer.middleName} #{customer.lastName}" outcome="/customOrders?customerId=#{customer.id}"/></li>
+            <span>Orders:</span>
+            <ul>
+                <ui:repeat value="#{customer.customOrders}" var="customOrder">
+                    <li>#{customOrder.paymentMethod}</li>
+                </ui:repeat>
+            </ul>
+        </ui:repeat>
+    </ol>
 
     <h:form>
         <label>First name:</label>
