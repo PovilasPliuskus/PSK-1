@@ -15,23 +15,23 @@ public class Book
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
 
     @Column(name = "Title")
     @Basic(optional = false)
-    private String Title;
+    private String title;
 
     @Column(name = "Author")
     @Basic(optional = false)
-    private String Author;
+    private String author;
 
     @Column(name = "PageCount")
     @Basic(optional = false)
-    private Integer PageCount;
+    private Integer pageCount;
 
     @Column(name = "Price")
     @Basic(optional = false)
-    private Float Price;
+    private Float price;
 
     @Column
     @ManyToMany
@@ -40,5 +40,5 @@ public class Book
             joinColumns = @JoinColumn(name = "FkBookId"),
             inverseJoinColumns = @JoinColumn(name = "FkOrderId")
     )
-    private List<CustomOrder> CustomOrders = new ArrayList<>();
+    private List<CustomOrder> customOrders = new ArrayList<>();
 }

@@ -16,16 +16,16 @@ public class CustomOrder
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
 
     @Column(name = "PaymentMethod")
     @Basic(optional = false)
-    private PaymentMethod PaymentMethod;
+    private PaymentMethod paymentMethod;
 
     @ManyToOne
     @JoinColumn(name="FkCustomerId")
-    private Customer Customer;
+    private Customer customer;
 
-    @ManyToMany(mappedBy = "CustomOrders")
-    List<Book> Books = new ArrayList<>();
+    @ManyToMany(mappedBy = "customOrders")
+    List<Book> books = new ArrayList<>();
 }

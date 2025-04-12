@@ -14,19 +14,19 @@ public class Customer
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
 
     @Column(name = "FirstName")
     @Basic(optional = false)
-    private String FirstName;
+    private String firstName;
 
     @Column(name = "MiddleName")
-    private String MiddleName;
+    private String middleName;
 
     @Column(name = "LastName")
     @Basic(optional = false)
-    private String LastName;
+    private String lastName;
 
-    @OneToMany(mappedBy = "Customer")
-    private List<CustomOrder> CustomOrders = new ArrayList<>();
+    @OneToMany(mappedBy = "customer")
+    private List<CustomOrder> customOrders = new ArrayList<>();
 }
