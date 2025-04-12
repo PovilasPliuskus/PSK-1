@@ -11,7 +11,7 @@
             <span>Orders:</span>
             <ul>
                 <ui:repeat value="#{customer.customOrders}" var="customOrder">
-                    <li>#{customOrder.paymentMethod}</li>
+                    <li>#{customOrder.string}</li>
                 </ui:repeat>
             </ul>
         </ui:repeat>

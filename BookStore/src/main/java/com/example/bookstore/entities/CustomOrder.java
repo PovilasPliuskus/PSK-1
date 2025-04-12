@@ -2,7 +2,6 @@ package com.example.bookstore.entities;
 
 import javax.persistence.*;
 
-import com.example.bookstore.enums.PaymentMethod;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,7 +24,7 @@ public class CustomOrder
 
     @Column(name = "PaymentMethod")
     @Basic(optional = false)
-    private PaymentMethod paymentMethod;
+    private String string;
 
     @ManyToOne
     @JoinColumn(name="FkCustomerId")
@@ -34,14 +33,14 @@ public class CustomOrder
     @ManyToMany(mappedBy = "customOrders")
     List<Book> books = new ArrayList<>();
 
-    public CustomOrder(PaymentMethod paymentMethod)
+    public CustomOrder(String string)
     {
-        this.paymentMethod = paymentMethod;
+        this.string = string;
     }
 
-    public CustomOrder(PaymentMethod paymentMethod, Customer customer)
+    public CustomOrder(String string, Customer customer)
     {
-        this(paymentMethod);
+        this(string);
         this.customer = customer;
     }
 }
