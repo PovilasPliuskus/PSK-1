@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 import com.example.bookstore.enums.PaymentMethod;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.ArrayList;
@@ -12,6 +13,10 @@ import java.util.List;
 @Entity
 @Table(name = "CustomOrder")
 @Getter @Setter
+@NoArgsConstructor
+@NamedQueries({
+        @NamedQuery(name = "CustomOrder.findAll", query = "select a from CustomOrder as a")
+})
 public class CustomOrder
 {
     @Id
@@ -28,4 +33,15 @@ public class CustomOrder
 
     @ManyToMany(mappedBy = "customOrders")
     List<Book> books = new ArrayList<>();
+
+    public CustomOrder(PaymentMethod paymentMethod)
+    {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public CustomOrder(PaymentMethod paymentMethod, Customer customer)
+    {
+        this(paymentMethod);
+        this.customer = customer;
+    }
 }

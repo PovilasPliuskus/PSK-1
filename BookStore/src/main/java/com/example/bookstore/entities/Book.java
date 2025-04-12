@@ -3,6 +3,7 @@ package com.example.bookstore.entities;
 import javax.persistence.*;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.ArrayList;
@@ -11,6 +12,11 @@ import java.util.List;
 @Entity
 @Table(name = "Book")
 @Getter @Setter
+@NoArgsConstructor
+@NamedQueries({
+        @NamedQuery(name = "Book.findAll", query = "select a from Book as a"),
+        @NamedQuery(name = "Book.findByTitle", query = "select a from Book as a where lower(a.title) = lower(:title)")
+})
 public class Book
 {
     @Id
@@ -41,4 +47,12 @@ public class Book
             inverseJoinColumns = @JoinColumn(name = "FkOrderId")
     )
     private List<CustomOrder> customOrders = new ArrayList<>();
+
+    public Book(String title, String author, Integer pageCount, Float price)
+    {
+        this.title = title;
+        this.author = author;
+        this.pageCount = pageCount;
+        this.price = price;
+    }
 }
