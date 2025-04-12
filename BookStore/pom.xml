@@ -49,14 +49,15 @@
 
     <build>
         <finalName>BookStore</finalName>
-        <pluginManagement>
             <plugins>
                 <plugin>
                     <groupId>org.mybatis.generator</groupId>
                     <artifactId>mybatis-generator-maven-plugin</artifactId>
                     <version>1.4.0</version>
                     <configuration>
-                        <contexts>PlayersDB</contexts>
+                        <configurationFile>src/main/resources/generatorConfig.xml</configurationFile>
+                        <overwrite>true</overwrite>
+                        <contexts>BookStoreDB</contexts>
                         <verbose>true</verbose>
                     </configuration>
                     <executions>
@@ -105,6 +106,5 @@
                     <version>2.8.2</version>
                 </plugin>
             </plugins>
-        </pluginManagement>
     </build>
 </project>
