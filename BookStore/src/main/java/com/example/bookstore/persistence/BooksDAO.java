@@ -34,4 +34,12 @@ public class BooksDAO {
             return null;
         }
     }
+
+    public Book findOne(int bookId) {
+        return entityManager.find(Book.class, bookId);
+    }
+
+    public void update(Book book) {
+        entityManager.merge(book);
+    }
 }
