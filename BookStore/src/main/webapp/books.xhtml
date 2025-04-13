@@ -44,7 +44,7 @@
     <h:form>
         <h:outputText value="#{generateBookPriceNumber.bookPriceGenerationStatus}" />
         <h:commandButton value="Generate book price?" disabled="#{generateBookPriceNumber.bookPriceGenerationRunning}" action="#{generateBookPriceNumber.generateNewBookPrice()}">
-            <f:param name="bookId" value="#{updateBookPrice.book.id}" />
+            <f:param name="customOrderId" value="#{updateBookPrice.customOrder.id}" />
         </h:commandButton>
     </h:form>
 

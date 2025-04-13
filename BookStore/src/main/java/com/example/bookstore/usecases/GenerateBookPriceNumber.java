@@ -28,7 +28,7 @@ public class GenerateBookPriceNumber implements Serializable {
 
         bookPriceGenerationTask = CompletableFuture.supplyAsync(() -> bookPriceGenerator.generateBookPrice());
 
-        return "/books.xhtml?faces-redirect=true&carId=" + requestParams.get("carId");
+        return "/books.xhtml?faces-redirect=true&customOrderId=" + requestParams.get("customOrderId");
     }
 
     public boolean isBookPriceGenerationRunning() {
