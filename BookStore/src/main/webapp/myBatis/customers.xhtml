@@ -13,7 +13,7 @@
             <span>Orders:</span>
             <ul>
                 <ui:repeat value="#{customer.customorders}" var="customOrder">
-                    <li>#{customOrder.string}</li>
+                    <li>#{customOrder.paymentMethod}</li>
                 </ui:repeat>
             </ul>
         </ui:repeat>

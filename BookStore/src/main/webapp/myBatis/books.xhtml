@@ -7,7 +7,7 @@
       xmlns:f="http://java.sun.com/jsf/core">
 <h:head/>
 <h:body>
-    <h2>Books in the order #{booksForCustomOrderMyBatis.customOrder.string}</h2>
+    <h2>Books in the order #{booksForCustomOrderMyBatis.customOrder.paymentMethod}</h2>
     <ol>
         <ui:repeat value="#{booksForCustomOrderMyBatis.customOrder.books}" var="book">
             <li><h:link value="#{book.title} #{book.author}" outcome="/myBatis/customOrdersForBook?bookId=#{book.id}"/></li>

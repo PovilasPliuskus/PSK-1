@@ -11,7 +11,7 @@
 
     <ol>
         <ui:repeat value="#{customOrdersForBookMyBatis.book.customOrders}" var="customOrder">
-            <li><h:link value="#{customOrder.string}" outcome="/myBatis/books?customOrderId=#{customOrder.id}"/></li>
+            <li><h:link value="#{customOrder.paymentMethod}" outcome="/myBatis/books?customOrderId=#{customOrder.id}"/></li>
         </ui:repeat>
     </ol>
     <h:link outcome="/myBatis/customers?faces-redirect=true" value="Back to customer's page"/>

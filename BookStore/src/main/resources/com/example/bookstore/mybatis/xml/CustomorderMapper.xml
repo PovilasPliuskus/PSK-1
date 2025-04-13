@@ -8,7 +8,7 @@
       This element was generated on Sun Apr 13 15:23:54 EEST 2025.
     -->
     <id column="ID" jdbcType="INTEGER" property="id" />
-    <result column="PAYMENTMETHOD" jdbcType="VARCHAR" property="string" />
+    <result column="PAYMENTMETHOD" jdbcType="VARCHAR" property="paymentMethod" />
     <result column="FKCUSTOMERID" jdbcType="INTEGER" property="fkcustomerid" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">

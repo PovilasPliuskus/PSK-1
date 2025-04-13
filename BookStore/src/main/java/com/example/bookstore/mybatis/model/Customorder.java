@@ -27,7 +27,7 @@ public class Customorder {
      *
      * @mbg.generated Sun Apr 13 15:23:54 EEST 2025
      */
-    private String string;
+    private String paymentMethod;
 
     /**
      *
@@ -42,13 +42,13 @@ public class Customorder {
 
     List<Book> books = new ArrayList<>();
 
-    public Customorder(String string)
+    public Customorder(String paymentMethod)
     {
-        this.string = string;
+        this.paymentMethod = paymentMethod;
     }
 
-    public Customorder(String string, Customer customer) {
-        this.string = string;
+    public Customorder(String paymentMethod, Customer customer) {
+        this.paymentMethod = paymentMethod;
         this.customer = customer;
     }
 }

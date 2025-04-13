@@ -11,12 +11,12 @@
 
     <ol>
         <ui:repeat value="#{customOrdersForCustomerMyBatis.customer.customorders}" var="customOrder">
-            <li><h:link value="#{customOrder.string}" outcome="/myBatis/books?customOrderId=#{customOrder.id}"/></li>
+            <li><h:link value="#{customOrder.paymentMethod}" outcome="/myBatis/books?customOrderId=#{customOrder.id}"/></li>
         </ui:repeat>
     </ol>
     <h:form>
         <label>Order payment: </label>
-        <h:inputText a:placeholder="payment method" value="#{customOrdersForCustomerMyBatis.customOrderToCreate.string}" required="true"/>
+        <h:inputText a:placeholder="payment method" value="#{customOrdersForCustomerMyBatis.customOrderToCreate.paymentMethod}" required="true"/>
         <h:commandButton value="Add order" action="#{customOrdersForCustomerMyBatis.createCustomOrder}" >
             <f:param name="customerId" value="#{customOrdersForCustomerMyBatis.customer.id}" />
         </h:commandButton>
