@@ -10,7 +10,7 @@
     <h2>Orders that have books with the title #{customOrdersForBookMyBatis.book.title}</h2>
 
     <ol>
-        <ui:repeat value="#{customOrdersForBookMyBatis.book.customOrders}" var="customOrder">
+        <ui:repeat value="#{customOrdersForBookMyBatis.book.customorders}" var="customOrder">
             <li><h:link value="#{customOrder.paymentMethod}" outcome="/myBatis/books?customOrderId=#{customOrder.id}"/></li>
         </ui:repeat>
     </ol>
