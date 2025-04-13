@@ -7,6 +7,12 @@
       xmlns:f="http://java.sun.com/jsf/core">
 <h:head/>
 <h:body>
+    <h2>Books in the order #{booksForCustomOrder.customOrder.string}</h2>
+    <ol>
+        <ui:repeat value="#{booksForCustomOrder.customOrder.books}" var="book">
+            <li><h:link value="#{book.title} #{book.author}" outcome="/customOrdersForBook?bookId=#{book.id}"/></li>
+        </ui:repeat>
+    </ol>
     <h2>Add book to order:</h2>
     <h:form>
         <label>book title: </label>
@@ -26,7 +32,7 @@
     <h:form>
         <h2>Add book from dropdown:</h2>
         <label>Book title:</label>
-        <h:selectOneMenu title="Available books" value="#{booksForCustomOrder.bookToAdd}" converter="#{partConverter}">
+        <h:selectOneMenu title="Available books" value="#{booksForCustomOrder.bookToAdd}" converter="#{bookConverter}">
             <f:selectItems value="#{booksForCustomOrder.allBooks}" var="bookval" itemValue="#{bookval.label}" />
         </h:selectOneMenu>
 

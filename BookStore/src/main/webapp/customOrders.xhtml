@@ -14,20 +14,10 @@
             <li><h:link value="#{customOrder.string}" outcome="/books?customOrderId=#{customOrder.id}"/></li>
         </ui:repeat>
     </ol>
-    <p>Add only order:</p>
     <h:form>
         <label>Order payment: </label>
         <h:inputText a:placeholder="payment method" value="#{customOrdersForCustomer.customOrderToCreate.string}" required="true"/>
         <h:commandButton value="Add order" action="#{customOrdersForCustomer.createCustomOrder}" >
-            <f:param name="customerId" value="#{customOrdersForCustomer.customer.id}" />
-        </h:commandButton>
-    </h:form>
-
-    <h:form>
-        <label>Order payment: </label>
-        <h:inputText placeholder="payment method" value="#{customOrdersForCustomer.customOrderToCreate.string}" required="true"/>
-
-        <h:commandButton value="Add Order" action="#{customOrdersForCustomer.createCustomOrderAndBook}">
             <f:param name="customerId" value="#{customOrdersForCustomer.customer.id}" />
         </h:commandButton>
     </h:form>

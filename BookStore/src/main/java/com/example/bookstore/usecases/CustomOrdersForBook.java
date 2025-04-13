@@ -7,12 +7,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.inject.Model;
 import javax.inject.Inject;
 import java.io.Serializable;
 import java.util.Map;
 
 import static javax.faces.context.FacesContext.getCurrentInstance;
 
+@Model
 public class CustomOrdersForBook implements Serializable {
 
     @Inject

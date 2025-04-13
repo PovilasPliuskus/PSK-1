@@ -47,7 +47,7 @@ public class BooksForCustomOrder implements Serializable {
         allBookCustomOrders.add(this.customOrder);
         bookToAdd.setCustomOrders(allBookCustomOrders);
         booksDAO.update(bookToAdd);
-        return "books?faces-redirect=true" + this.customOrder.getId();
+        return "books?faces-redirect=true&customOrderId=" + this.customOrder.getId();
     }
 
     @Transactional

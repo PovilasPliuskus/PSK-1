@@ -3,7 +3,7 @@ package com.example.bookstore.usecases;
 import com.example.bookstore.entities.Book;
 import com.example.bookstore.persistence.BooksDAO;
 
-import javax.annotation.ManagedBean;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;

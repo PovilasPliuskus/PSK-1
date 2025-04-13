@@ -10,8 +10,8 @@
     <h2>Orders that have books with the title #{customOrdersForBook.book.title}</h2>
 
     <ol>
-        <ui:repeat value="#{customOrdersForBook.book.customOrder}" var="customOrder">
-            <li><h:link value="#{customOrder.paymentMethod}" outcome="/books?customOrderId=#{customOrder.id}"/></li>
+        <ui:repeat value="#{customOrdersForBook.book.customOrders}" var="customOrder">
+            <li><h:link value="#{customOrder.string}" outcome="/books?customOrderId=#{customOrder.id}"/></li>
         </ui:repeat>
     </ol>
     <h:link outcome="index?faces-redirect=true" value="Back to customer's page"/>
