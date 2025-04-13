@@ -43,4 +43,5 @@ public interface CustomorderMapper {
      * @mbg.generated Sun Apr 13 15:23:54 EEST 2025
      */
     int updateByPrimaryKey(Customorder record);
+    List<Customorder> selectByCustomerId(int id);
 }

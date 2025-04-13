@@ -59,4 +59,9 @@
     select ID, PAYMENTMETHOD, FKCUSTOMERID
     from PUBLIC.CUSTOMORDER
   </select>
+  <select id="selectByCustomerId" resultMap="BaseResultMap" parameterType="int">
+    select ID, PAYMENTMETHOD, FKCUSTOMERID
+    from PUBLIC.CUSTOMORDER
+    where FKCUSTOMERID = #{fkcustomerid}
+  </select>
 </mapper>

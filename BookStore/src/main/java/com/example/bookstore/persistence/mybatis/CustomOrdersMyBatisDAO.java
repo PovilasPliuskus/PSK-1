@@ -35,4 +35,9 @@ public class CustomOrdersMyBatisDAO {
         CustomorderMapper mapper = sqlSession.getMapper(CustomorderMapper.class);
         mapper.updateByPrimaryKey(customOrder);
     }
+
+    public List<Customorder> findByCustomerId(int customerId) {
+        CustomorderMapper mapper = sqlSession.getMapper(CustomorderMapper.class);
+        return mapper.selectByCustomerId(customerId);
+    }
 }

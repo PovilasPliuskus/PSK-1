@@ -97,6 +97,9 @@ public class CustomOrdersForCustomerMyBatis implements Serializable {
 
         int customerId = Integer.parseInt(requestParams.get("customerId"));
         this.customer = customersMyBatisDAO.findOne(customerId);
+
+        this.customer.setCustomorders(customOrdersMyBatisDAO.findByCustomerId(customerId));
+
         this.allBooks = new ArrayList<>();
         List<Book> availableBooks = booksMyBatisDAO.findAll();
         for (Book book : availableBooks) {
