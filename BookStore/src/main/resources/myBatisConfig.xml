@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias type="com.example.bookstore.mybatis.model.Customer" alias="Customer"/>
+        <typeAlias type="com.example.bookstore.mybatis.model.Customorder" alias="Customorder"/>
+        <typeAlias type="com.example.bookstore.mybatis.model.Book" alias="Book"/>
+        <typeAlias type="com.example.bookstore.mybatis.model.Bookorder" alias="Bookorder"/>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="MANAGED"/>
+            <dataSource type="JNDI">
+                <property name="data_source" value="BookStoreDataSource"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="com/example/bookstore/mybatis/xml/CustomerMapper.xml"/>
+        <mapper resource="com/example/bookstore/mybatis/xml/CustomorderMapper.xml"/>
+        <mapper resource="com/example/bookstore/mybatis/xml/BookMapper.xml"/>
+        <mapper resource="com/example/bookstore/mybatis/xml/BookorderMapper.xml"/>
+    </mappers>
+</configuration>

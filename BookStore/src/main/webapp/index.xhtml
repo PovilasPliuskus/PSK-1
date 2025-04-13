@@ -26,5 +26,8 @@
         <h:inputText value="#{customers.customerToCreate.lastName}" required="true" />
         <h:commandButton value="Add new customer" action="#{customers.createCustomer}" />
     </h:form>
+
+    <h:link outcome="myBatis/customers" value="MyBatis implementation"/>
+
 </h:body>
 </html>

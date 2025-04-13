@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+<h:head/>
+<h:body>
+    <h2>Customers:</h2>
+    <ol>
+        <ui:repeat value="#{customersMyBatis.allCustomers}" var="customer">
+            <li><h:link value="#{customer.firstname} #{customer.middlename} #{customer.lastname}" outcome="/myBatis/customOrders?customerId=#{customer.id}"/></li>
+        </ui:repeat>
+    </ol>
+</h:body>
+</html>
