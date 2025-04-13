@@ -12,6 +12,21 @@
     <result column="LASTNAME" jdbcType="VARCHAR" property="lastname" />
     <result column="MIDDLENAME" jdbcType="VARCHAR" property="middlename" />
   </resultMap>
+  <resultMap id="CustomerWithOrdersResultMap" type="com.example.bookstore.mybatis.model.Customer">
+    <id property="id" column="id"/>
+    <result property="firstname" column="firstname"/>
+    <result property="middlename" column="middlename"/>
+    <result property="lastname" column="lastname"/>
+
+    <collection property="customorders" ofType="com.example.bookstore.mybatis.model.Customorder"
+                select="selectOrdersByCustomerId" column="id"/>
+  </resultMap>
+  <select id="selectAllWithOrders" resultMap="CustomerWithOrdersResultMap">
+    SELECT * FROM CUSTOMER
+  </select>
+  <select id="selectOrdersByCustomerId" resultType="com.example.bookstore.mybatis.model.Customorder">
+    SELECT * FROM CUSTOMORDER WHERE FKCUSTOMERID = #{id}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
       WARNING - @mbg.generated

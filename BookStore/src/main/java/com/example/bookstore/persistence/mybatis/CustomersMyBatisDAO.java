@@ -27,6 +27,6 @@ public class CustomersMyBatisDAO {
 
     public List<Customer> loadAll() {
         CustomerMapper mapper = sqlSession.getMapper(CustomerMapper.class);
-        return mapper.selectAll();
+        return mapper.selectAllWithOrders();
     }
 }

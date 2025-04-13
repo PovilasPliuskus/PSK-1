@@ -12,8 +12,8 @@
             <li><h:link value="#{customer.firstname} #{customer.middlename} #{customer.lastname}" outcome="/myBatis/customOrders?customerId=#{customer.id}"/></li>
             <span>Orders:</span>
             <ul>
-                <ui:repeat value="#{customer.customorders}" var="customorder">
-                    <li>#{customorder.string}</li>
+                <ui:repeat value="#{customer.customorders}" var="customOrder">
+                    <li>#{customOrder.string}</li>
                 </ui:repeat>
             </ul>
         </ui:repeat>

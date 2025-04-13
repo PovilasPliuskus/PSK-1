@@ -31,7 +31,7 @@ public class CustomersMyBatis implements Serializable {
     public String createCustomer()
     {
         customersMyBatisDAO.persist(customerToCreate);
-        return "index?faces-redirect=true";
+        return "/myBatis/customers?faces-redirect=true";
     }
 
     private void loadAllCustomers() {this.allCustomers = customersMyBatisDAO.loadAll();}

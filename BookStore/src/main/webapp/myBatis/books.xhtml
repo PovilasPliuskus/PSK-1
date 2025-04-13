@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head/>
+<h:body>
+    <h2>Books in the order #{booksForCustomOrderMyBatis.customOrder.string}</h2>
+    <ol>
+        <ui:repeat value="#{booksForCustomOrderMyBatis.customOrder.books}" var="book">
+            <li><h:link value="#{book.title} #{book.author}" outcome="/myBatis/customOrdersForBook?bookId=#{book.id}"/></li>
+        </ui:repeat>
+    </ol>
+    <h2>Add book to order:</h2>
+    <h:form>
+        <label>book title: </label>
+        <h:inputText a:placeholder="title" value="#{booksForCustomOrderMyBatis.bookToAdd.title}" required="true"/>
+        <label>book author: </label>
+        <h:inputText a:placeholder="author" value="#{booksForCustomOrderMyBatis.bookToAdd.author}" required="true"/>
+        <label>book page count: </label>
+        <h:inputText a:placeholder="page count" value="#{booksForCustomOrderMyBatis.bookToAdd.pageCount}" required="true"/>
+        <label>book price: </label>
+        <h:inputText a:placeholder="price" value="#{booksForCustomOrderMyBatis.bookToAdd.price}" required="true"/>
+
+        <h:commandButton value="Add book to order" action="#{booksForCustomOrderMyBatis.createBook}" >
+            <f:param name="customOrderId" value="#{booksForCustomOrderMyBatis.customOrder.id}" />
+        </h:commandButton>
+    </h:form>
+
+    <h:form>
+        <h2>Add book from dropdown:</h2>
+        <label>Book title:</label>
+        <h:selectOneMenu title="Available books" value="#{booksForCustomOrderMyBatis.bookToAdd}" converter="#{bookConverter}">
+            <f:selectItems value="#{booksForCustomOrderMyBatis.allBooks}" var="bookval" itemValue="#{bookval.label}" />
+        </h:selectOneMenu>
+
+        <h:commandButton value="Add book to the order" action="#{booksForCustomOrderMyBatis.createBookFromDropdown}" >
+            <f:param name="customOrderId" value="#{booksForCustomOrderMyBatis.customOrder.id}" />
+        </h:commandButton>
+    </h:form>
+
+    <h:link outcome="/myBatis/customers?faces-redirect=true" value="Back to customers page"/>
+
+</h:body>
+</html>
