@@ -41,6 +41,13 @@
         </h:commandButton>
     </h:form>
 
+    <h:form>
+        <h:outputText value="#{generateBookPriceNumber.bookPriceGenerationStatus}" />
+        <h:commandButton value="Generate book price?" disabled="#{generateBookPriceNumber.bookPriceGenerationRunning}" action="#{generateBookPriceNumber.generateNewBookPrice()}">
+            <f:param name="bookId" value="#{updateBookPrice.book.id}" />
+        </h:commandButton>
+    </h:form>
+
     <h:link outcome="index?faces-redirect=true" value="Back to customers page"/>
 
 </h:body>
