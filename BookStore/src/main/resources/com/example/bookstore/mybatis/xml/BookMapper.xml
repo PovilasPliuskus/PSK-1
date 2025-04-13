@@ -65,4 +65,7 @@
     select ID, AUTHOR, PAGECOUNT, PRICE, TITLE
     from PUBLIC.BOOK
   </select>
+  <select id="selectByTitle" parameterType="String" resultType="com.example.bookstore.mybatis.model.Book">
+    SELECT * FROM PUBLIC.BOOK WHERE title = #{title}
+  </select>
 </mapper>

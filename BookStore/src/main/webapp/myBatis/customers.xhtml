@@ -10,7 +10,24 @@
     <ol>
         <ui:repeat value="#{customersMyBatis.allCustomers}" var="customer">
             <li><h:link value="#{customer.firstname} #{customer.middlename} #{customer.lastname}" outcome="/myBatis/customOrders?customerId=#{customer.id}"/></li>
+            <span>Orders:</span>
+            <ul>
+                <ui:repeat value="#{customer.customorders}" var="customorder">
+                    <li>#{customorder.string}</li>
+                </ui:repeat>
+            </ul>
         </ui:repeat>
+
+        <h:form>
+            <label>First name:</label>
+            <h:inputText value="#{customersMyBatis.customerToCreate.firstname}" required="true" />
+            <label>Middle name:</label>
+            <h:inputText value="#{customersMyBatis.customerToCreate.middlename}" required="false" />
+            <label>Last name:</label>
+            <h:inputText value="#{customersMyBatis.customerToCreate.lastname}" required="true" />
+            <h:commandButton value="Add new customer" action="#{customersMyBatis.createCustomer}" />
+        </h:form>
+        <h:link value="Back to jpa impl" outcome="/index"/>
     </ol>
 </h:body>
 </html>

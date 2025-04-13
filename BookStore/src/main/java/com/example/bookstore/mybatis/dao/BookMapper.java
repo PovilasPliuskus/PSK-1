@@ -43,4 +43,5 @@ public interface BookMapper {
      * @mbg.generated Sun Apr 13 15:23:54 EEST 2025
      */
     int updateByPrimaryKey(Book record);
+    Book selectByTitle(String title);
 }
