@@ -91,5 +91,7 @@ public class BooksForCustomOrderMyBatis implements Serializable {
         for (Book book : availableBooks) {
             this.allBooks.add(new SelectItem(book, book.getTitle()));
         }
+
+        System.out.println("Books in order: " + (customOrder.getBooks() != null ? customOrder.getBooks().size() : "null"));
     }
 }

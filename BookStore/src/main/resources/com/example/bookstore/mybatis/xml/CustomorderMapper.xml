@@ -64,4 +64,9 @@
     from PUBLIC.CUSTOMORDER
     where FKCUSTOMERID = #{fkcustomerid}
   </select>
+  <select id="selectBooksForOrder" resultType="Book">
+    SELECT b.* FROM book b
+                      JOIN BOOKORDER bc ON b.id = bc.FKBOOKID
+    WHERE bc.FKORDERID = #{id}
+  </select>
 </mapper>

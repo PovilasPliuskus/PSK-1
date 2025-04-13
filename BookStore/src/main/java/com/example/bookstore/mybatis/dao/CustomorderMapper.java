@@ -1,5 +1,6 @@
 package com.example.bookstore.mybatis.dao;
 
+import com.example.bookstore.mybatis.model.Book;
 import com.example.bookstore.mybatis.model.Customorder;
 import java.util.List;
 
@@ -44,4 +45,5 @@ public interface CustomorderMapper {
      */
     int updateByPrimaryKey(Customorder record);
     List<Customorder> selectByCustomerId(int id);
+    List<Book> selectBooksForOrder(int customOrderId);
 }
